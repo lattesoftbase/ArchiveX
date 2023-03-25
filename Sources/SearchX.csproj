@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64</Platforms>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+       <PropertyGroup Condition="'$(PlatformTarget)' == 'x64'">
+      <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(PlatformTarget)' == 'x86'">
+      <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+    </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CefSharp.Wpf" Version="111.2.20" />
+  </ItemGroup>
+    <ItemGroup>
+		<Reference Update="CefSharp">
+			<Private>true</Private>
+		</Reference>
+		<Reference Update="CefSharp.Core">
+			<Private>true</Private>
+		</Reference>
+		<Reference Update="CefSharp.Wpf">
+			<Private>true</Private>
+		</Reference>
+	</ItemGroup>
+
+</Project>
